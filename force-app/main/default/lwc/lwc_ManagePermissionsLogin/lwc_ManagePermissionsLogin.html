@@ -1,0 +1,50 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 12-05-2022
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <c-custom-toast auto-close-time="2000"></c-custom-toast>
+    <div class="slds-var-p-around_small">
+        <div style="width: 60%">
+            <template if:true={destLoginShow}>
+                <template if:true={orgDisplayOptions}>
+                    <lightning-combobox name="login" label={labels.Logintodestination}
+                        placeholder="Select an option" options={orgDisplayOptions} onchange={handleOrgSelection}>
+                    </lightning-combobox>
+                </template>
+
+                <template if:true={newOrgLogin}>
+                    <lightning-radio-group label="Type" options={OrgTypeOptions} onchange={handleOrgTypeSelection}
+                        type="radio"></lightning-radio-group>
+                </template>
+
+                <br>
+                <lightning-button variant="brand" label={labels.Login} title="Primary action" onclick={handleLogin}
+                    class="slds-m-left_x-small"></lightning-button>
+            </template>
+        </div>
+
+        <template if:true={accessToken}>
+            <lightning-card title={cardTitle}>
+                <lightning-button variant="brand" label="Logout" slot="actions" onclick={handleLogout}></lightning-button>
+                <p class="slds-p-horizontal_small">
+                    <lightning-tabset>
+                        <lightning-tab label={labels.FieldAccessLabel}>
+                            <c-lwc_-manage-field-permissions access-token={accessToken} base-url={baseUrl}
+                            base-org-type={baseOrgType}>
+                            </c-lwc_-manage-field-permissions>
+                        </lightning-tab>
+                        <lightning-tab label={labels.ObjectAccesslabel} title="2nd tab extended title">
+                            <c-lwc_-manage-object-permissions access-token={accessToken} base-url={baseUrl}
+                                base-org-type={baseOrgType}>
+                            </c-lwc_-manage-object-permissions>
+                        </lightning-tab>
+                    </lightning-tabset>
+                </p>
+            </lightning-card>
+        </template>
+    </div>
+</template>
