@@ -31,19 +31,26 @@
 			</lightning-layout-item>
 		</div>
 		<br>
+		<!-- <div class="slds-grid slds-wrap slds-clearfix"> -->
 		<div class="slds-grid slds-wrap">
-			<!--Fetch field permissions-->
-			<div class="slds-col slds-large-size_2-of-12 slds-medium-size_2-of-12 slds-size_2-of-12">
-				<lightning-button variant="brand" label = {labels.fetchData} title = {labels.fetchData}
-					onclick={fetchFieldPermissions} class="slds-align_absolute-center"></lightning-button>
-			</div>
-			<!--Save field permissions-->
-			<div class="slds-p-left_xx-small slds-large-size_2-of-12 slds-medium-size_2-of-12 slds-size_2-of-12">
-				<template if:true={isdataFetched}>
-					<lightning-button variant="brand" label = {labels.saveData} title = {labels.saveData} onclick={savefieldPermissions}>
-					</lightning-button>
+				<!--Fetch field permissions-->
+			
+					<div class="slds-col">
+						<div class="slds-float_right slds-p-horizontal_small">
+						<lightning-button variant="brand" label={labels.fetchData} title={labels.fetchData}
+							onclick={fetchFieldPermissions}></lightning-button>
+							</div>
+				<!--Save field permissions-->
+					<template if:true={isdataFetched}>
+					<div class="slds-float_right slds-p-horizontal_small">
+						<lightning-button variant="brand" label={labels.saveData} title={labels.saveData}
+							onclick={savefieldPermissions}>
+						</lightning-button>
+					</div>
 				</template>
+				
 			</div>
+			
 		</div>
 
 	</lightning-card>
@@ -58,7 +65,8 @@
 		<div class="slds-box slds-theme_default">
 
 			<lightning-card variant="Narrow">
-				<div class="slds-grid slds-wrap">
+				<div class="slds-grid slds-wrap slds-align_absolute-center">
+
 					<div
 						class="slds-p-left_x-small slds-col slds-large-size_1-of-12 slds-medium-size_1-of-12 slds-size_1-of-12">
 						<div class='slds-truncate black'>
@@ -167,7 +175,7 @@
 		</div>
 	</template>
 	<!--Custom component to display toast meaages-->
-	<c-custom-toast auto-close-time= {autoCloseTime}></c-custom-toast>
+	<c-custom-toast auto-close-time={autoCloseTime}></c-custom-toast>
 	<lightning-button onclick={showToast}></lightning-button>
 
 </template>
