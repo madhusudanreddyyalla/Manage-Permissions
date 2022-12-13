@@ -3,7 +3,7 @@
         {
             "path": "force-app",
             "default": true,
-            "package": "ManagePermissions",
+            "package": "ManagePermissionsv2",
             "versionName": "ver 0.1",
             "versionNumber": "0.1.0.NEXT"
         }
@@ -13,6 +13,7 @@
     "sourceApiVersion": "55.0",
     "packageAliases": {
         "ManagePermissions": "0Ho5i0000010wCTCAY",
-        "ManagePermissions@0.1.0-1": "04t5i0000011PPhAAM"
+        "ManagePermissions@0.1.0-1": "04t5i0000011PPhAAM",
+        "ManagePermissionsv2": "0Ho5i0000010wCdCAI"
     }
 }
