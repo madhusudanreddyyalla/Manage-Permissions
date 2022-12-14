@@ -7,7 +7,11 @@
 -->
 <template>
     <lightning-card variant="Narrow">
-
+        <div class="fixed-header" >
+            <div class="slds-box slds-box_x-small" style="margin: 20px; font-size:medium; color:#FFFFFF; background-color:#0176D3;">
+              <p> You are logging into the Org for changing Field and Object Permissions </p>
+            </div>
+        </div>
 
 
     <c-custom-toast auto-close-time="2000"></c-custom-toast>
@@ -50,6 +54,9 @@
                 </p>
             </lightning-card>
         </template>
+    </div>
+    <div class="fixed-footer">
+        <div class="slds-box slds-box_x-small" style="margin: 20px; font-size:medium; color:#FFFFFF; background-color:#0176D3;">Field & Object Manage Permissions</div>        
     </div>
 </lightning-card>
 </template>
